@@ -117,6 +117,8 @@ Below is further rationale/explanation for the rubric items above:
 <!-- TODO: briefly argue your choice of design or design something
 new; then delete this comment -->
 
+>The chosen componenet I would  like to design is a formations app. As a dancer this combines my interests in dance and computer science together, which ties into 2 strong interests and passions of mine. In terms of development, I want to develop this component because I would like to design a componenent with a GUI, which this componenet can depend. Throughout this semester, I can implmenent this design to be as simple or complex as I want. I could choose to implement such that it only collects and displays dancers like on a slide show, or make it even more complex enough that the dancers can move into their next formations. I think this a componenet that challenges me but I can also make as intriciate as I want based on however much effort I want to put into this.
+
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
 > preference is to use GitHub Desktop. From there, you can click the `Branch`
@@ -125,8 +127,6 @@ new; then delete this comment -->
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -153,7 +153,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -172,7 +171,7 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a proof of concept for <!-- insert name of component here --> component
+- Designed a proof of concept for Formations App component
 
 ### Updated
 
