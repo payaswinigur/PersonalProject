@@ -188,7 +188,6 @@ request merge (or at least tag your commits). This is not required.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
@@ -243,6 +242,7 @@ make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
 
 <!-- TODO: follow the link to share your feedback then delete this comment -->
+
 
 [pottery-fails]: https://www.youtube.com/shorts/Kqb9l113F_0?feature=share
 [survey]: https://forms.gle/dumXHo6A4Enucdkq9
