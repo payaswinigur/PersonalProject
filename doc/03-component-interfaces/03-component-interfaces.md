@@ -64,6 +64,10 @@ to the tree diagram (you may remove this one as well):
 ```json
 "todo-tree.tree.showCountsInTree": true,
 ```
+## Components Hierarchy
+```
+
+```
 
 ## Assignment Learning Objectives
 

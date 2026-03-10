@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2026.03.10
+- Designed kernel and enhanced interfaces for DanceFormation component
+
 ## [Unreleased]
 
 - Disabled an aspect of the coderunner extension
@@ -76,6 +79,7 @@ the following form: YYYY.0M.0D.
 - Created a README at the root to explain how to use the template repo
 - Created initial drafts of the six portfolio assessments
 - Added READMEs to key folders like `test` and `lib` to explain their purpose
+
 
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
