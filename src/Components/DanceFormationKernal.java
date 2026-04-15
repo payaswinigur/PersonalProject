@@ -48,7 +48,7 @@ public interface DanceFormationKernel extends Standard<DanceFormation> {
      * @return name of dancer at position, or null if position is empty
      * @ensures dancerAt = name of dancer at position, or null if position is
      *          empty
-     * 
+     *
      */
     String dancerAt(int x, int y);
 
@@ -73,6 +73,13 @@ public interface DanceFormationKernel extends Standard<DanceFormation> {
     void removeFormation();
 
     /**
+     * Sets the current formation slide to the given index.
+     * 
+     * @param index
+     */
+    void setCurrentFormation(int index);
+
+    /**
      * Returns the number of formation slides.
      *
      * @return number of formation slides
@@ -82,8 +89,25 @@ public interface DanceFormationKernel extends Standard<DanceFormation> {
 
     /**
      * Returns the index of the current formation slide
-     * 
+     *
      * @return index of current formation slide
      */
     int currentFormation();
+
+    /**
+     * Returns the width of the formation grid.
+     *
+     * @return width of formation grid
+     * @ensures return = width of formation grid
+     */
+
+    int formationWidth();
+
+    /**
+     * Returns the height of the formation grid.
+     * 
+     * @return height of formation grid
+     * @ensures return = height of formation grid
+     */
+    int formationHeight();
 }

@@ -5,7 +5,7 @@ import java.util.List;
  * Secondary implementation of DanceFormation interface. Provides default
  * implementations for some methods, while leaving others abstract for concrete
  * subclasses to implement.
- * 
+ *
  * @author Payaswini Gurung
  */
 public abstract class DanceFormationSecondary implements DanceFormation {
@@ -18,8 +18,8 @@ public abstract class DanceFormationSecondary implements DanceFormation {
      * @ensures current formation = #current formation + 1
      */
     @Override
-    public abstract void nextForm(){
-        nextFromKernal();
+    public void nextForm() {
+        this.setCurrentFormation(this.currentFormation() + 1);
     }
 
     /**
@@ -30,8 +30,8 @@ public abstract class DanceFormationSecondary implements DanceFormation {
      * @ensures current formation = #current formation - 1
      */
     @Override
-    public abstract void previousForm(){
-        previousFormKernal();
+    public void previousForm() {
+        this.setCurrentFormation(this.currentFormation() - 1);
     }
 
     /**
@@ -41,21 +41,23 @@ public abstract class DanceFormationSecondary implements DanceFormation {
      * @ensures totalFormations = total formations stored
      */
     @Override
-    public abstract int totalFormations(){
-        return numberOfFormations();
+    public int totalFormations() {
+        return this.numberOfFormations();
     }
 
     /**
      * Checks if a position is empty in the current formation.
      *
-     * @param x row index
-     * @param y column index
+     * @param x
+     *            row index
+     * @param y
+     *            column index
      * @return true if position has no dancer
      * @ensures positionEmpty = true iff no dancer occupies position
      */
     @Override
-    public abstract boolean positionEmpty(int x, int y){
-        return dancerAt(x, y) == null;
+    public boolean positionEmpty(int x, int y) {
+        return this.dancerAt(x, y) == null;
     }
 
     /**
@@ -86,8 +88,9 @@ public abstract class DanceFormationSecondary implements DanceFormation {
     @Override
     public List<String> dancersInFormation() {
         List<String> dancers = new ArrayList<>();
-        int width = formationWidth();
-        int height = formationHeight();
+
+        int width = this.formationWidth();
+        int height = this.formationHeight();
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 String dancer = this.dancerAt(x, y);
