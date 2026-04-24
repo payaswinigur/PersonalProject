@@ -80,7 +80,7 @@ public class DanceFormation1Test {
         }
     }
 
-    // ==================== setRoster Tests ====================
+    // setRoster Tests
 
     /**
      * Test: setRoster correctly sets the roster.
@@ -115,7 +115,7 @@ public class DanceFormation1Test {
         assertEquals("Test1", this.formation.dancerAt(0, 0));
     }
 
-    // ==================== addDancer Tests ====================
+    //addDancer Tests
 
     /**
      * Test: addDancer places dancer at specified position.
@@ -238,7 +238,7 @@ public class DanceFormation1Test {
         assertEquals("Alice", dancer1);
     }
 
-    // ==================== addFormation Tests ====================
+    //addFormation Tests
 
     /**
      * Test: addFormation increases formation count.
