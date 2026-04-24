@@ -1,38 +1,107 @@
+package Components;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Kernel implementation of DanceFormation.
+ * Concrete kernel implementation of DanceFormation.
  *
  * <p>
- * 
- * @CONVENTION:
- *              <ul>
- *              <li>formations is a list of 2D arrays representing each
- *              slide</li>
- *              <li>current is the index of the active formation</li>
- *              <li>each String[][] represents a grid of dancer names</li>
- *              <li>null entries represent empty positions</li>
- *              </ul>
+ * <b>Overview:</b><br>
+ * DanceFormation1 is a concrete implementation of the DanceFormation interface
+ * that manages dance formations using a list of 2D String arrays. Each
+ * formation slide is represented as a 2D grid where each cell contains either a
+ * dancer name (non-null String) or represents an empty position (null). This
+ * class handles all operations for creating, modifying, and navigating between
+ * formation slides.
+ * </p>
  *
- *              <p>
- *              REPRESENTATION INVARIANT:
- *              <ul>
- *              <li>formations is not null and contains at least one
- *              element</li>
- *              <li>0 <= current < formations.size()</li>
- *              <li>all formations have dimensions width x height</li>
- *              </ul>
+ * <p>
+ * <b>Data Structure:</b><br>
+ * <ul>
+ * <li><code>formations</code>: A List of String[][] arrays, each representing
+ * one slide</li>
+ * <li><code>current</code>: The index of the currently active formation</li>
+ * <li><code>width</code>: The number of columns in each formation grid</li>
+ * <li><code>height</code>: The number of rows in each formation grid</li>
+ * <li><code>roster</code>: The list of available dancer names</li>
+ * </ul>
+ * </p>
  *
- *              <p>
- *              CORRESPONDENCE:
- *              <ul>
- *              <li>this = (formations, current, roster, width, height)</li>
- *              <li>current formation = formations[current]</li>
- *              <li>each cell in formations[current] corresponds to a dancer
- *              position</li>
- *              </ul>
+ * <p>
+ * <b>Conventions:</b><br>
+ * <ul>
+ * <li>formations is a List&lt;String[][]&gt; representing each formation
+ * slide</li>
+ * <li>current is the index of the active formation (0-based)</li>
+ * <li>Each String[][] represents a grid of dancer names and empty
+ * positions</li>
+ * <li>Null entries (null) represent empty positions in the grid</li>
+ * <li>Non-null String values represent dancer names at specific positions</li>
+ * <li>width represents the x-dimension (columns), height represents the
+ * y-dimension (rows)</li>
+ * <li>All formations have identical dimensions (width x height)</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * <b>Representation Invariant:</b><br>
+ * <ul>
+ * <li>formations is not null and contains at least one element</li>
+ * <li>0 &lt;= current &lt; formations.size()</li>
+ * <li>all formations have dimensions width x height</li>
+ * <li>width &gt; 0 and height &gt; 0</li>
+ * <li>roster is not null (may be empty)</li>
+ * <li>Each element of formations is a non-null String[][] array</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * <b>Correspondence:</b><br>
+ * The abstraction (interface contract) corresponds to the implementation as
+ * follows:
+ * <ul>
+ * <li>this = (formations, current, roster, width, height)</li>
+ * <li>current formation = formations.get(current)</li>
+ * <li>each cell [x][y] in formations.get(current) corresponds to position (x,
+ * y)</li>
+ * <li>null values at [x][y] indicate empty positions</li>
+ * <li>non-null String values at [x][y] are the names of dancers at that
+ * position</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * <b>Grid Coordinates:</b><br>
+ * The formation grid uses (x, y) coordinates where:
+ * <ul>
+ * <li>x is the column index (0 to width-1)</li>
+ * <li>y is the row index (0 to height-1)</li>
+ * <li>Access: formations.get(current)[x][y]</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * <b>Usage Example:</b><br>
+ * <pre>
+ * DanceFormation1 formation = new DanceFormation1(5, 5);
+ * formation.setRoster(Arrays.asList("Alice", "Bob", "Charlie"));
+ * formation.addDancer("Alice", 0, 0);
+ * formation.addDancer("Bob", 2, 2);
+ * formation.addFormation();  // Create a new slide
+ * formation.addDancer("Charlie", 1, 1);
+ * </pre>
+ * </p>
+ *
+ * @author Payaswini Gurung
+ * @version 1.0
+ * @since 1.0
+ *
+ * @see DanceFormation
+ * @see DanceFormationSecondary
+ * @see DanceFormationKernel
  */
+
 public class DanceFormation1 extends DanceFormationSecondary {
     /**
      * Abstract data type representing a dance formation with multiple slides.
@@ -50,17 +119,22 @@ public class DanceFormation1 extends DanceFormationSecondary {
     /**
      * Creates a new DanceFormation with the given dimensions. Initially, there
      * is
-     * 
+     *
      * @param width
      * @param height
      */
     public DanceFormation1(int width, int height) {
-        this.width = width;
-        this.height = height;
 
+        // Initialize the roster as an empty list of dancer names
         this.roster = new ArrayList<>();
+
+        // Initialize the list to store all formation slides
         this.formations = new ArrayList<>();
+
+        // Create the first (initial) empty formation with given dimensions
         this.formations.add(new String[width][height]);
+
+        // Set the first formation as the current active formation
         this.current = 0;
     }
 
@@ -78,7 +152,7 @@ public class DanceFormation1 extends DanceFormationSecondary {
 
     /**
      * Adds a dancer to the current formation at the given position.
-     * 
+     *
      * @param name
      * @param x
      * @param y
@@ -107,7 +181,7 @@ public class DanceFormation1 extends DanceFormationSecondary {
     /**
      * Returns the name of the dancer at a given position in the current
      * formation.
-     * 
+     *
      * @param x
      * @param y
      * @return
@@ -119,7 +193,7 @@ public class DanceFormation1 extends DanceFormationSecondary {
 
     /**
      * Adds a new formation to the list.
-     * 
+     *
      * @updates this
      * @ensures formations = #formations + [new empty formation]
      */
@@ -140,9 +214,10 @@ public class DanceFormation1 extends DanceFormationSecondary {
 
     /**
      * Removes the current formation from the list.
-     * 
+     *
      * @updates this
-     * @requires current formation is not the only formation
+     * @requires current formation is not the only formation, has at least more
+     *           than 1 formation
      * @ensures formations = #formations - [current formation]
      */
     @Override
@@ -176,7 +251,7 @@ public class DanceFormation1 extends DanceFormationSecondary {
 
     /**
      * Moves to the next formation slide.
-     * 
+     *
      * @param index
      */
     @Override
