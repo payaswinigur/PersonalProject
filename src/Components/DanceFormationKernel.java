@@ -102,7 +102,7 @@ public interface DanceFormationKernel {
     /**
      * Removes the dancer at a given position in the current formation. name of
      * dancer
-     * 
+     *
      * @param x
      *            the x coordinate of the dancer's position.
      * @param y
@@ -151,7 +151,7 @@ public interface DanceFormationKernel {
 
     /**
      * Sets the current formation slide to the given index.
-     * 
+     *
      * @param index
      */
     void setCurrentFormation(int index);
@@ -182,7 +182,7 @@ public interface DanceFormationKernel {
 
     /**
      * Returns the height of the formation grid.
-     * 
+     *
      * @return height of formation grid
      * @ensures return = height of formation grid
      */

@@ -13,7 +13,6 @@ import Components.DanceFormation1;
  * are properly placed before the performance begins.
  * </p>
  *
- *
  * <p>
  * Usage Scenario:<br>
  * A group wants to organize a flash mob in a public square. The square is
