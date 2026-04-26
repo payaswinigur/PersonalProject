@@ -184,7 +184,7 @@ public class ChoreographyPlanner {
         dancers.add("Henry");
         planner.setDancers(dancers);
 
-        // ========== INTRO SECTION ==========
+        // INTRO SECTION
         planner.addFormationSection("INTRO");
         planner.placeDancer("Alice", 0, 0);
         planner.placeDancer("Bob", 3, 0);
@@ -192,7 +192,7 @@ public class ChoreographyPlanner {
         planner.placeDancer("Diana", 3, 3);
         planner.displayCurrentFormation();
 
-        // ========== VERSE SECTION ==========
+        // VERSE SECTION
         planner.addFormationSection("VERSE");
         planner.placeDancer("Eve", 1, 1);
         planner.placeDancer("Frank", 2, 1);
@@ -200,7 +200,7 @@ public class ChoreographyPlanner {
         planner.placeDancer("Henry", 2, 2);
         planner.displayCurrentFormation();
 
-        // ========== CHORUS SECTION ==========
+        //  CHORUS SECTION
         planner.addFormationSection("CHORUS");
         planner.placeDancer("Alice", 0, 1);
         planner.placeDancer("Bob", 1, 0);
@@ -212,7 +212,7 @@ public class ChoreographyPlanner {
         planner.placeDancer("Henry", 0, 2);
         planner.displayCurrentFormation();
 
-        // ========== BRIDGE SECTION ==========
+        //  BRIDGE SECTION
         planner.addFormationSection("BRIDGE");
         planner.placeDancer("Alice", 1, 1);
         planner.placeDancer("Bob", 2, 1);
@@ -220,7 +220,7 @@ public class ChoreographyPlanner {
         planner.placeDancer("Diana", 2, 2);
         planner.displayCurrentFormation();
 
-        // ========== FINALE SECTION ==========
+        //  FINALE SECTION
         planner.addFormationSection("FINALE");
         planner.placeDancer("Alice", 0, 0);
         planner.placeDancer("Bob", 1, 0);
@@ -232,7 +232,7 @@ public class ChoreographyPlanner {
         planner.placeDancer("Henry", 3, 3);
         planner.displayCurrentFormation();
 
-        // ========== PREVIEW THE ROUTINE ==========
+        // PREVIEW THE ROUTINE
         System.out.println("\n" + "=".repeat(40));
         System.out.println("ROUTINE PREVIEW - Navigating Through Sections");
         System.out.println("=".repeat(40));
@@ -247,7 +247,7 @@ public class ChoreographyPlanner {
         planner.nextSection();
         System.out.println("Moved to: " + planner.getCurrentSectionName());
 
-        // ========== SUMMARY ==========
+        // SUMMARY
         System.out.println("\n" + "=".repeat(40));
         System.out.println("ROUTINE SUMMARY");
         System.out.println("=".repeat(40));
