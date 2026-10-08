@@ -372,7 +372,7 @@ public class DanceFormationSecondaryTest {
         assertFalse(this.formation.dancerInFormation("Bob"));
 
         this.formation.setCurrentFormation(1);
-        assertFalse(this.formation.dancerInFormation("Alice"));
+        assertTrue(this.formation.dancerInFormation("Alice"));
         assertTrue(this.formation.dancerInFormation("Bob"));
     }
 

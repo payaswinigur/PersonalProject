@@ -125,6 +125,10 @@ public class DanceFormation1 extends DanceFormationSecondary {
      */
     public DanceFormation1(int width, int height) {
 
+        // Record the grid dimensions so every later formation can be sized
+        this.width = width;
+        this.height = height;
+
         // Initialize the roster as an empty list of dancer names
         this.roster = new ArrayList<>();
 
@@ -222,10 +226,15 @@ public class DanceFormation1 extends DanceFormationSecondary {
      */
     @Override
     public void removeFormation() {
-        this.formations.remove(this.current);
 
-        if (this.current > 0) {
-            this.current--;
+        // The representation invariant requires at least one formation,
+        // so the final slide must never be removed
+        if (this.formations.size() > 1) {
+            this.formations.remove(this.current);
+
+            if (this.current > 0) {
+                this.current--;
+            }
         }
     }
 
