@@ -8,8 +8,8 @@ import java.util.List;
  * <p>
  * <b>Overview:</b><br>
  * DanceFormationKernel defines the core contract for managing a collection of
- * dance formation slides. Each formation is a 2D grid where dancers can be
- * positioned. This interface provides fundamental operations for
+ * dance formation slides. Each formation places dancers at positions on a
+ * fixed width x height stage. This interface provides fundamental operations for
  * adding/removing dancers, managing multiple formation slides, and maintaining
  * a roster of available dancers.
  * </p>
@@ -28,10 +28,10 @@ import java.util.List;
  * <p>
  * <b>Conventions:</b><br>
  * <ul>
- * <li>formations: A collection of 2D arrays, each representing a single
- * slide</li>
+ * <li>formations: A sequence of slides, each placing dancers at
+ * positions</li>
  * <li>current: The index of the currently active formation slide</li>
- * <li>width x height: The fixed dimensions of all formation grids</li>
+ * <li>width x height: The fixed dimensions of the stage</li>
  * <li>Null entries: Represent empty positions in the formation grid</li>
  * <li>Roster: A list of dancer names that can be placed in formations</li>
  * </ul>

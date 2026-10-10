@@ -38,10 +38,13 @@ import java.util.List;
  * <b>Conventions:</b><br>
  * Inherits all conventions from DanceFormationKernel:
  * <ul>
- * <li>formations: A list of 2D arrays representing slides</li>
+ * <li>formations: A sequence of slides, each placing dancers at
+ * positions</li>
  * <li>current: The index of the active formation</li>
- * <li>Each String[][] grid has fixed dimensions (width x height)</li>
- * <li>Null entries represent empty dancer positions</li>
+ * <li>Every slide shares one fixed width x height stage</li>
+ * <li>A position with no dancer on it is empty, and dancerAt returns
+ * null for it</li>
+ * <li>At most one dancer holds a given position in a slide</li>
  * </ul>
  * </p>
  *

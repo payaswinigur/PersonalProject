@@ -139,15 +139,30 @@ public class DanceFormation1Test {
     }
 
     /**
-     * Test: addDancer replaces existing dancer at position.
+     * Test: addDancer refuses a position another dancer already holds.
      */
     @Test
-    public void testAddDancerReplacement() {
+    public void testAddDancerRefusesOccupiedPosition() {
         this.formation.addDancer("Alice", 1, 1);
         assertEquals("Alice", this.formation.dancerAt(1, 1));
 
         this.formation.addDancer("Bob", 1, 1);
-        assertEquals("Bob", this.formation.dancerAt(1, 1));
+
+        // Alice keeps the spot and Bob is not placed
+        assertEquals("Alice", this.formation.dancerAt(1, 1));
+    }
+
+    /**
+     * Test: addDancer moves a dancer who is already on stage rather than
+     * leaving them in two places at once.
+     */
+    @Test
+    public void testAddDancerMovesDancerAlreadyOnStage() {
+        this.formation.addDancer("Alice", 1, 1);
+        this.formation.addDancer("Alice", 3, 3);
+
+        assertNull(this.formation.dancerAt(1, 1));
+        assertEquals("Alice", this.formation.dancerAt(3, 3));
     }
 
     /**
@@ -290,7 +305,9 @@ public class DanceFormation1Test {
         this.formation.addDancer("Alice", 0, 0);
         this.formation.addFormation();
 
-        // Modify new formation
+        // Modify new formation. addFormation copies Alice forward, and
+        // addDancer now refuses an occupied spot, so free it first.
+        this.formation.removeDancer(0, 0);
         this.formation.addDancer("Bob", 0, 0);
 
         // Check previous formation
@@ -397,6 +414,10 @@ public class DanceFormation1Test {
     public void testSetCurrentFormationIndependence() {
         this.formation.addDancer("Alice", 0, 0);
         this.formation.addFormation();
+
+        // Alice was copied into the new slide, so vacate the spot before
+        // placing Bob there
+        this.formation.removeDancer(0, 0);
         this.formation.addDancer("Bob", 0, 0);
 
         this.formation.setCurrentFormation(0);
