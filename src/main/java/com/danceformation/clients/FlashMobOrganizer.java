@@ -1,7 +1,9 @@
+package com.danceformation.clients;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import components.DanceFormation1;
+import com.danceformation.components.DanceFormation1;
 
 /**
  * FlashMobOrganizer: A practical use case for DanceFormation.

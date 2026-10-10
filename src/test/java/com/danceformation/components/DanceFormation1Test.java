@@ -1,4 +1,4 @@
-package components;
+package com.danceformation.components;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

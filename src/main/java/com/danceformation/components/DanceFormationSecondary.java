@@ -1,4 +1,4 @@
-package components;
+package com.danceformation.components;
 
 import java.util.ArrayList;
 import java.util.List;
