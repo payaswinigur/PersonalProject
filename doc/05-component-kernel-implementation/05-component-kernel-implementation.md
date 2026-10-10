@@ -120,7 +120,29 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+
+``
+I represented a dance formation system as a sequence of discrete “slides,” where each slide is a 2D grid of dancer positions. Each grid cell stores either a String (the name of a dancer) or null to indicate an empty position.
+
+Using:
+
+List<String[][]> formations to store all formation slides
+int current  to track the formation indexes
+int width/height to define the location in grid dimensions
+List<String> roster to store valid dancer names
+The list of 2D arrays allows efficent access by any index.
+The 2D array is used for  each formation since this allows constant time access with the given formations (x,y). It is able to mathce the grid strucuter of a stage, as if drawing them out on a piece of paper.
+
+Convention:
+the formatios contain all dance formation slides in order. the i-th formation can be accesed using an index and calling formations[i]. formations[current] holds the active formation.  Each frormation is stored in the 2D array formations[i][x][y] with a String representing the dancer name. roster conains all valid dancer names in the formation. width and height define teh fixed grid size for all formations.
+
+Correspondance:
+The abstract current formation is represented by formatsions[current].
+Dancers at position (x,y) correspond to the formations[current][x][y]
+The set of all dancers in the current foration corresponds to al non nul entries in formations[current]. The numeber of the format
+ions is represented by formations.size(). the active formation index corresponds to current. The valid dancer names corresponds to the mbers in roster.
+
+``
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to

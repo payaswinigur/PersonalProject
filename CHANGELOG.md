@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2026.04.01
+
+### Added
+- Created `DanceFormationSecondary` abstract class implementing `DanceFormation`.
+- Implemented all secondary methods from the enhanced interface using kernel methods only:
+  - `dancersInFormation()`
+  - `dancerInFormation(String name)`
+  - `nextForm()`
+  - `previousForm()`
+  - `totalFormations()`
+  - `positionEmpty(int x, int y)`
+- Implemented Object methods:
+  - `equals(Object o)`
+  - `toString()`
+
 ## [Unreleased]
 
 - Disabled an aspect of the coderunner extension
