@@ -1,7 +1,9 @@
+package com.danceformation.clients;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import Components.DanceFormation1;
+import com.danceformation.components.DanceFormation1;
 
 /**
  * ChoreographyPlanner: A practical use case for DanceFormation.

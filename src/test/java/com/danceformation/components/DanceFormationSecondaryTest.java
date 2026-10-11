@@ -1,4 +1,4 @@
-package components;
+package com.danceformation.components;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -9,9 +9,6 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import Components.DanceFormation;
-import Components.DanceFormation1;
 
 /**
  * JUnit test class for DanceFormationSecondary convenience methods.
